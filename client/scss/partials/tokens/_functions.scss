@@ -1,0 +1,23 @@
+@use "sass:map";
+
+@function token($tokens, $key, $subkey: null) {
+  @if not map.has-key($tokens, $key) {
+    @error "Unknown token key '#{$key}'.";
+  }
+
+  $value: map.get($tokens, $key);
+
+  @if $subkey == null {
+    @return $value;
+  }
+
+  @if type-of($value) != "map" {
+    @error "Token '#{$key}' does not contain nested values.";
+  }
+
+  @if not map.has-key($value, $subkey) {
+    @error "Unknown sub-token '#{$subkey}' for '#{$key}'.";
+  }
+
+  @return map.get($value, $subkey);
+}
