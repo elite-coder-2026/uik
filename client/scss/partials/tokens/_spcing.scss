@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $spacing-scale: (
   "0": 0,
   "0.5": 2px,
@@ -32,28 +34,28 @@ $spacing-scale: (
 );
 
 $spacing: (
-  "none": map-get($spacing-scale, "0"),
-  "3xs": map-get($spacing-scale, "0.5"),
-  "2xs": map-get($spacing-scale, "1"),
-  "xs": map-get($spacing-scale, "2"),
-  "sm": map-get($spacing-scale, "3"),
-  "md": map-get($spacing-scale, "4"),
-  "lg": map-get($spacing-scale, "5"),
-  "xl": map-get($spacing-scale, "6"),
-  "2xl": map-get($spacing-scale, "8"),
-  "3xl": map-get($spacing-scale, "10"),
-  "4xl": map-get($spacing-scale, "12"),
-  "5xl": map-get($spacing-scale, "16"),
-  "6xl": map-get($spacing-scale, "20"),
-  "7xl": map-get($spacing-scale, "24"),
-  "8xl": map-get($spacing-scale, "32"),
-  "9xl": map-get($spacing-scale, "40"),
-  "section-sm": map-get($spacing-scale, "48"),
-  "section-md": map-get($spacing-scale, "64"),
-  "section-lg": map-get($spacing-scale, "80"),
-  "section-xl": map-get($spacing-scale, "96"),
-  "container-sm": map-get($spacing-scale, "120"),
-  "container-md": map-get($spacing-scale, "160"),
-  "container-lg": map-get($spacing-scale, "192"),
-  "container-xl": map-get($spacing-scale, "256")
+  "none": map.get($spacing-scale, "0"),
+  "3xs": map.get($spacing-scale, "0.5"),
+  "2xs": map.get($spacing-scale, "1"),
+  "xs": map.get($spacing-scale, "2"),
+  "sm": map.get($spacing-scale, "3"),
+  "md": map.get($spacing-scale, "4"),
+  "lg": map.get($spacing-scale, "5"),
+  "xl": map.get($spacing-scale, "6"),
+  "2xl": map.get($spacing-scale, "8"),
+  "3xl": map.get($spacing-scale, "10"),
+  "4xl": map.get($spacing-scale, "12"),
+  "5xl": map.get($spacing-scale, "16"),
+  "6xl": map.get($spacing-scale, "20"),
+  "7xl": map.get($spacing-scale, "24"),
+  "8xl": map.get($spacing-scale, "32"),
+  "9xl": map.get($spacing-scale, "40"),
+  "section-sm": map.get($spacing-scale, "48"),
+  "section-md": map.get($spacing-scale, "64"),
+  "section-lg": map.get($spacing-scale, "80"),
+  "section-xl": map.get($spacing-scale, "96"),
+  "container-sm": map.get($spacing-scale, "120"),
+  "container-md": map.get($spacing-scale, "160"),
+  "container-lg": map.get($spacing-scale, "192"),
+  "container-xl": map.get($spacing-scale, "256")
 );
