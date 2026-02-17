@@ -1,0 +1,483 @@
+@use "tokens/functions" as *;
+@use "tokens/colors";
+@use "tokens/spcing";
+@use "tokens/radius";
+@use "tokens/shadows";
+
+.profile {
+  margin: 50px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: token(shadows.$shadows, "lg");
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: token(colors.$colors, "gray", "900");
+  background: token(colors.$colors, "gray", "50");
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .layout {
+    width: 1440px;
+    max-width: 100%;
+    min-height: 960px;
+    display: flex;
+  }
+
+  .sidebar {
+    width: 296px;
+    height: 960px;
+    flex: 0 0 296px;
+    background: token(colors.$colors, "base", "white");
+    border-right: 1px solid token(colors.$colors, "gray", "200");
+    padding: token(spcing.$spacing, "lg") token(spcing.$spacing, "md") token(spcing.$spacing, "md");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .brand {
+    margin: token(spcing.$spacing, "2xs") 0 token(spcing.$spacing, "md");
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .search {
+    width: 100%;
+    height: 40px;
+    border: 1px solid token(colors.$colors, "gray", "300");
+    border-radius: token(radius.$radius, "md");
+    background: token(colors.$colors, "base", "white");
+    color: token(colors.$colors, "gray", "500");
+    padding: 0 token(spcing.$spacing, "sm");
+    margin-bottom: token(spcing.$spacing, "sm");
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-item,
+  .nav-sub {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    border-radius: token(radius.$radius, "sm");
+    padding: 0 token(spcing.$spacing, "sm");
+    color: token(colors.$colors, "gray", "700");
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .nav-sub {
+    font-weight: 600;
+    background: token(colors.$colors, "gray", "100");
+    padding-left: 28px;
+  }
+
+  .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: token(spcing.$spacing, "xs");
+  }
+
+  .profile-mini {
+    border: 1px solid token(colors.$colors, "gray", "200");
+    border-radius: token(radius.$radius, "lg");
+    padding: token(spcing.$spacing, "xs");
+    display: flex;
+    align-items: center;
+    gap: token(spcing.$spacing, "xs");
+  }
+
+  .profile-mini img {
+    width: 32px;
+    height: 32px;
+    border-radius: token(radius.$radius, "full");
+    object-fit: cover;
+  }
+
+  .profile-mini__name {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  .profile-mini__email {
+    color: token(colors.$colors, "gray", "600");
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .main {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 1380px;
+    background: token(colors.$colors, "base", "white");
+  }
+
+  .hero {
+    padding: token(spcing.$spacing, "2xs") token(spcing.$spacing, "2xs") 0;
+  }
+
+  .hero-cover {
+    width: 100%;
+    height: 240px;
+    border-radius: token(radius.$radius, "xl");
+    background: linear-gradient(180deg, #a5c0ee 0%, #fbc5ec 100%);
+  }
+
+  .hero-content {
+    margin-top: -40px;
+    padding: 0 token(spcing.$spacing, "2xl");
+    display: flex;
+    align-items: flex-start;
+    gap: token(spcing.$spacing, "lg");
+  }
+
+  .avatar-wrap {
+    width: 160px;
+    height: 160px;
+    flex: 0 0 160px;
+    border-radius: token(radius.$radius, "full");
+    background: token(colors.$colors, "base", "white");
+    border: 1px solid rgba(token(colors.$colors, "gray", "950"), 0.08);
+    padding: token(spcing.$spacing, "sm");
+    position: relative;
+    box-shadow: token(shadows.$shadows, "2xl");
+  }
+
+  .avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: token(radius.$radius, "full");
+    object-fit: cover;
+  }
+
+  .verified {
+    position: absolute;
+    right: token(spcing.$spacing, "xs");
+    bottom: token(spcing.$spacing, "xs");
+    width: 32px;
+    height: 32px;
+    border-radius: token(radius.$radius, "full");
+    background: token(colors.$colors, "info", "500");
+    color: token(colors.$colors, "base", "white");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .hero-info {
+    flex: 1 1 auto;
+    padding-top: token(spcing.$spacing, "5xl");
+  }
+
+  .hero-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: token(spcing.$spacing, "md");
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    margin-top: token(spcing.$spacing, "xs");
+    color: token(colors.$colors, "gray", "600");
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: token(spcing.$spacing, "sm");
+  }
+
+  .btn {
+    border: 1px solid token(colors.$colors, "gray", "300");
+    border-radius: token(radius.$radius, "md");
+    background: token(colors.$colors, "base", "white");
+    color: token(colors.$colors, "gray", "700");
+    height: 40px;
+    padding: 0 token(spcing.$spacing, "sm");
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .btn.icon {
+    width: 40px;
+    padding: 0;
+  }
+
+  .btn.primary {
+    background: token(colors.$colors, "brand", "600");
+    border-color: rgba(token(colors.$colors, "base", "white"), 0.12);
+    color: token(colors.$colors, "base", "white");
+  }
+
+  .section {
+    padding: 36px token(spcing.$spacing, "2xl") 0;
+  }
+
+  .section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: token(spcing.$spacing, "md");
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  .section-sub {
+    margin-top: token(spcing.$spacing, "2xs");
+    color: token(colors.$colors, "gray", "600");
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .divider {
+    height: 1px;
+    background: token(colors.$colors, "gray", "200");
+    margin: 22px 0 token(spcing.$spacing, "xl");
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 64px;
+  }
+
+  .about-copy {
+    color: token(colors.$colors, "gray", "600");
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .about-copy h3 {
+    margin: 0 0 10px;
+    color: token(colors.$colors, "gray", "900");
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  .about-copy p {
+    margin: 0 0 token(spcing.$spacing, "md");
+  }
+
+  .link-inline {
+    color: token(colors.$colors, "brand", "700");
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: token(spcing.$spacing, "xl");
+  }
+
+  .meta-label {
+    margin: 0 0 token(spcing.$spacing, "xs");
+    color: token(colors.$colors, "gray", "600");
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  .meta-value,
+  .meta-link {
+    color: token(colors.$colors, "gray", "700");
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .meta-link {
+    color: token(colors.$colors, "brand", "700");
+    font-weight: 600;
+  }
+
+  .jobs {
+    margin-top: token(spcing.$spacing, "xl");
+    display: flex;
+    gap: token(spcing.$spacing, "xl");
+    flex-wrap: wrap;
+  }
+
+  .job-card {
+    flex: 1 1 320px;
+    min-width: 320px;
+    border: 1px solid token(colors.$colors, "gray", "200");
+    border-radius: token(radius.$radius, "xl");
+    background: token(colors.$colors, "base", "white");
+    box-shadow: token(shadows.$shadows, "xs");
+    overflow: hidden;
+  }
+
+  .job-main {
+    padding: token(spcing.$spacing, "lg");
+  }
+
+  .job-head {
+    display: flex;
+    align-items: center;
+    gap: token(spcing.$spacing, "sm");
+  }
+
+  .job-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: token(radius.$radius, "full");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: token(colors.$colors, "base", "white");
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .job-logo.purple { background: #5b33c5; }
+  .job-logo.green { background: #1f9f5f; }
+  .job-logo.blue { background: #4f5be3; }
+
+  .job-title {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .job-company {
+    margin: token(spcing.$spacing, "3xs") 0 0;
+    color: token(colors.$colors, "gray", "600");
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .job-date {
+    margin-top: token(spcing.$spacing, "md");
+    color: token(colors.$colors, "gray", "600");
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .job-footer {
+    border-top: 1px solid token(colors.$colors, "gray", "200");
+    padding: token(spcing.$spacing, "md") token(spcing.$spacing, "lg");
+    text-align: right;
+  }
+
+  .projects {
+    padding: 40px token(spcing.$spacing, "2xl") token(spcing.$spacing, "2xl");
+  }
+
+  .tabs {
+    margin-top: token(spcing.$spacing, "sm");
+    display: flex;
+    gap: token(spcing.$spacing, "2xs");
+    padding: token(spcing.$spacing, "2xs");
+    border: 1px solid token(colors.$colors, "gray", "200");
+    border-radius: token(radius.$radius, "lg");
+    background: token(colors.$colors, "gray", "50");
+  }
+
+  .tab {
+    border: 0;
+    border-radius: token(radius.$radius, "sm");
+    background: transparent;
+    color: token(colors.$colors, "gray", "500");
+    padding: token(spcing.$spacing, "xs") token(spcing.$spacing, "sm");
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  .tab.active {
+    background: token(colors.$colors, "base", "white");
+    color: token(colors.$colors, "gray", "700");
+    box-shadow: token(shadows.$shadows, "sm");
+  }
+
+  .project-grid {
+    margin-top: token(spcing.$spacing, "lg");
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: token(spcing.$spacing, "xl");
+  }
+
+  .project-grid img {
+    width: 100%;
+    height: 184px;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 1200px) {
+    .sidebar {
+      display: none;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: token(spcing.$spacing, "xl");
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .hero-content,
+    .section,
+    .projects {
+      padding-left: token(spcing.$spacing, "md");
+      padding-right: token(spcing.$spacing, "md");
+    }
+
+    .hero-content {
+      flex-direction: column;
+      margin-top: -60px;
+    }
+
+    .hero-info {
+      padding-top: 0;
+      width: 100%;
+    }
+
+    .hero-head {
+      flex-direction: column;
+    }
+
+    .actions {
+      flex-wrap: wrap;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
