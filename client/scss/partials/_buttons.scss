@@ -1,0 +1,69 @@
+@use "tokens/functions" as *;
+@use "tokens/colors";
+@use "tokens/spcing";
+@use "tokens/radius";
+@use "tokens/shadows";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: token(spcing.$spacing, "2xl");
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: token(colors.$colors, "gray", "900");
+  background: token(colors.$colors, "gray", "25");
+}
+
+h1 {
+  margin: 0 0 token(spcing.$spacing, "xs");
+  font-size: 28px;
+}
+
+p {
+  margin: 0 0 token(spcing.$spacing, "2xl");
+  color: token(colors.$colors, "gray", "600");
+}
+
+.palette {
+  display: grid;
+  gap: token(spcing.$spacing, "3xl");
+}
+
+.palette-group {
+  display: grid;
+  gap: token(spcing.$spacing, "md");
+}
+
+.palette-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: token(spcing.$spacing, "sm");
+}
+
+.color-button {
+  border: 1px solid rgba(token(colors.$colors, "gray", "950"), 0.12);
+  border-radius: token(radius.$radius, "xl");
+  padding: token(spcing.$spacing, "md");
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 76px;
+  box-shadow: token(shadows.$shadows, "xs");
+}
+
+.color-name {
+  font-weight: 700;
+  display: block;
+}
+
+.color-hex {
+  opacity: 0.9;
+}
